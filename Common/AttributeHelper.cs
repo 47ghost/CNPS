@@ -8,13 +8,17 @@ using System.Threading.Tasks;
 
 namespace Common
 {
+    //轻量级 ORM（对象关系映射）思想
     public static class AttributeHelper
     {
-        /// <summary>
-        /// 获取映射表名
-        /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
+
+
+        // string tableName = typeof(T).GetTName();
+        //语法糖-拓展方法  在编译时相当于AttributeHelper.GetTName(typeof(T));
+        //这样调用仿佛是T类型的一个方法
+
+
+        // 获取映射表名
         public static string GetTName(this Type type)
         {
             string tableName = "";
@@ -26,11 +30,13 @@ namespace Common
             return tableName;
         }
 
-        /// <summary>
-        /// 获取映射列名
-        /// </summary>
-        /// <param name="property"></param>
-        /// <returns></returns>
+        //Type 是 .NET 中的一个类，表示一个类型的信息
+        //获取类名、命名空间等结构等信息获取该类有哪些属性、方法、字段等获取类上的特性（Attribute）
+        //PropertyInfo 是 .NET 中的一个类，表示一个属性的信息
+        //获取属性的名称、类型、访问修饰符等信息获取属性上的特性（Attribute）
+
+
+        // 获取映射列名
         public static string GetColName(this PropertyInfo property)
         {
             string colName = "";
@@ -42,11 +48,7 @@ namespace Common
             return colName;
         }
 
-        /// <summary>
-        /// 获取主键名
-        /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
+        // 获取主键名
         public static string GetPrimaryName(this Type type)
         {
             string priName = "";
@@ -56,12 +58,8 @@ namespace Common
             return priName;
         }
 
-        /// <summary>
-        /// 判断指定属性是否为主键
-        /// </summary>
-        /// <param name="type"></param>
-        /// <param name="property"></param>
-        /// <returns></returns>
+
+        //判断指定属性是否为主键
         public static bool IsPrimaryKey(this PropertyInfo property)
         {
             Type type = property.DeclaringType;
@@ -70,11 +68,8 @@ namespace Common
             return (primaryKey == colName);
         }
 
-        /// <summary>
-        /// 判断主键是否自增
-        /// </summary>
-        /// <param name="type"></param>
-        /// <returns></returns>
+
+        // 判断主键是否自增
         public static bool IsAutoIncrement(this Type type)
         {
             PrimaryKeyAttribute attr = type.GetCustomAttribute<PrimaryKeyAttribute>();

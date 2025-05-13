@@ -43,5 +43,15 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CaiNiaoPostStation.Models\CaiNiaoPostStation.Models.csproj">
+      <Project>{31482395-d242-4236-9695-066383f83747}</Project>
+      <Name>CaiNiaoPostStation.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{9789883a-9311-4ca9-9be5-a412fe47eb6b}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

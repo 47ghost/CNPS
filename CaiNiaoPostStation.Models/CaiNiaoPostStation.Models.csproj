@@ -42,6 +42,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VModels\EmployeeInfo.cs" />
+    <Compile Include="VModels\EmpTypeInfo.cs" />
+    <Compile Include="VModels\ExpDistributeInfo.cs" />
+    <Compile Include="VModels\ExpressInfo.cs" />
+    <Compile Include="VModels\ExpressTypeInfo.cs" />
+    <Compile Include="VModels\ExpSelfPickInfo.cs" />
+    <Compile Include="VModels\MenuInfo.cs" />
+    <Compile Include="VModels\ShelfInfo.cs" />
+    <Compile Include="VModels\StationInfo.cs" />
+    <Compile Include="VModels\UserInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{9789883a-9311-4ca9-9be5-a412fe47eb6b}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UIModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
